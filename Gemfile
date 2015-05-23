@@ -19,3 +19,6 @@ end
 
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
+gem 'carrierwave', '0.10.0'
+gem "fog-aws"
+gem 'figaro', '0.7.0'
