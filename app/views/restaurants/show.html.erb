@@ -20,7 +20,7 @@
 
 		<p>
 		  <strong>Website:</strong>
-		  <%= link_to @restaurant.website, @restaurant.website %>
+		  <%= link_to @restaurant.website, url_with_protocol(@restaurant.website), target: '_blank' %>
 		</p>
 
 		<%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
@@ -70,14 +70,12 @@
 						</tr>
 					<% end %>
 				</tbody>
-			</table>
-			
-
-			
+			</table>			
 		<% end %>
 	</div>
 </div>
 
+<%= will_paginate @review_page %>
 
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |

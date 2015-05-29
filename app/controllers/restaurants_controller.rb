@@ -21,6 +21,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1.json
   def show
     @reviews = Review.where(restaurant_id: @restaurant.id).order("created_at DESC")
+    @review_page =  @reviews.paginate(:page => params[:page], :per_page => 10)
     if @reviews.blank?
       @avg_rating = 0
     else
